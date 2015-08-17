@@ -138,6 +138,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: .00999999978
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f8be63edd520032488cf5b981351615d, type: 3}
+      propertyPath: m_TagString
+      value: PlayerModel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8be63edd520032488cf5b981351615d, type: 3}
   m_IsPrefabParent: 0
@@ -324,6 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c768413e99629fe4c93d5e4682864e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tilt: 5
+  Speed: 50
 --- !u!54 &1529303316
 Rigidbody:
   m_ObjectHideFlags: 0
