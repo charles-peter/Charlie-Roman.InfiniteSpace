@@ -328,7 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c768413e99629fe4c93d5e4682864e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tilt: 5
+  playerModel: {fileID: 1863910350}
+  Tilt: 25
   Speed: 50
 --- !u!54 &1529303316
 Rigidbody:
@@ -478,6 +479,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &1863910350 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: f8be63edd520032488cf5b981351615d, type: 3}
+  m_PrefabInternal: {fileID: 578575014}
 --- !u!4 &1948785782 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f8be63edd520032488cf5b981351615d, type: 3}
