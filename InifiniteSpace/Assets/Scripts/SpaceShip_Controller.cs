@@ -10,8 +10,13 @@ public class SpaceShip_Controller : MonoBehaviour {
     public float Tilt;
     public float Speed;
 
-   
+	//All the Variables needed for firing projectiles. 
+	public GameObject projectile;
+	public Transform projSpawn;
+	public float fireRate;
+	float nextFire = 0.0f;
 
+	// Use this for initialization
 	void Start () 
     {
         m_rigidbody = GetComponent<Rigidbody>();
@@ -19,7 +24,17 @@ public class SpaceShip_Controller : MonoBehaviour {
         
         
 	}
-	
+
+
+	void Update()
+	{
+		if (Input.GetButton ("Fire1") && Time.time > nextFire) 
+		{
+			nextFire = Time.time + fireRate;
+			Instantiate(projectile, projSpawn.position, projSpawn.rotation);
+		}
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () 
     {
