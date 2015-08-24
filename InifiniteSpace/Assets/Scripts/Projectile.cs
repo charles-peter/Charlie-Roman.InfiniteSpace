@@ -32,7 +32,8 @@ public class Projectile : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		Destroy(gameObject);
+		if(other.tag != "Radar")
+			Destroy(gameObject);
 	}
 
 	public int Damage {
