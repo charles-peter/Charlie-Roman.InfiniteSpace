@@ -3,13 +3,33 @@ using System.Collections;
 
 public class Enemy_Controller : MonoBehaviour 
 {
-	public Vector3 SpawnPosition;
 	Rigidbody m_rigidbody;
+
+	GameObject target = null;
+
+	public int m_heatlh;
 
 	void Start()
 	{
 		m_rigidbody = GetComponent<Rigidbody>();
-		m_rigidbody.position = SpawnPosition;
 	}
 
+	void Update()
+	{
+		if (m_heatlh <= 0)
+			Destroy (gameObject);
+	}
+
+	void FixedUpdate()
+	{
+
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "BaseProjectile") 
+		{
+			m_heatlh -= other.GetComponent<Projectile>().Damage;
+		}
+	}
 }
