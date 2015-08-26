@@ -11,7 +11,7 @@ public class SpaceShip_Controller : MonoBehaviour {
     public float Tilt;
     public float Speed;
 
-	 
+	public GameObject m_Target; 
 
 	HardPoint [] missiles; // holds the two spawn points for the missiles
 	public GameObject m_Missile;  // holds the prefab for missile
@@ -48,7 +48,7 @@ public class SpaceShip_Controller : MonoBehaviour {
 		{
 			// Fire Missile
 
-			bool b = missiles[nextmissile].Fire();
+			bool b = missiles[nextmissile].Fire(m_Target);
 			if(b)
 			nextmissile = nextmissile^1;
 			//Debug.Log(nextmissile);

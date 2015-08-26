@@ -33,7 +33,7 @@ public class HardPoint : MonoBehaviour {
 
 	}
 
-	public bool Fire()
+	public bool Fire(GameObject target = null)
 	{
 
 		if(Loaded==false)
@@ -41,6 +41,7 @@ public class HardPoint : MonoBehaviour {
 
 		myMissile.transform.parent = null;    //unparent the transform from the spawn point
 		Missile_Behavior m = myMissile.GetComponent<Missile_Behavior>();
+		m.Target = target;
 		m.InFlight = true;    // set the missile to active flight
 		myMissile = null;    //stop holding reference to this missile;
 		Loaded = false;      // no longer have a missile in me

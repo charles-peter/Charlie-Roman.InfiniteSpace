@@ -5,6 +5,7 @@ public class Missile_Behavior : MonoBehaviour {
 
 
 	public float Speed = 100f;
+	public float TrackAngle = 5f;
 	public float SplashRadius = 5f;
 	public float Damage = 300f;
 	public float maxLifetime = 5f;
@@ -61,8 +62,14 @@ public class Missile_Behavior : MonoBehaviour {
 
 	void FixedUpdate () 
 	{
-		if(inFlight)
+		if(inFlight && target == null)
 		{
+			m_RigidBody.velocity = m_Transform.forward * Speed;
+			m_RigidBody.AddForce(m_Transform.forward * Speed,ForceMode.Acceleration);
+		}
+		else if(inFlight && target)
+		{
+			m_Transform.rotation = Quaternion.Slerp(m_Transform.rotation, Quaternion.LookRotation(target.transform.position- m_Transform.position),TrackAngle * Time.deltaTime);
 			m_RigidBody.velocity = m_Transform.forward * Speed;
 			m_RigidBody.AddForce(m_Transform.forward * Speed,ForceMode.Acceleration);
 		}
