@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerModel
+  - BaseProjectile
+  - BaseEnemy
+  - Radar
   - Missile
   layers:
   - Default
