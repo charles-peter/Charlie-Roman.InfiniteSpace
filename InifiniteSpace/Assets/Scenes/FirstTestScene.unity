@@ -367,7 +367,7 @@ GameObject:
   - 4: {fileID: 1529303314}
   - 54: {fileID: 1529303316}
   - 114: {fileID: 1529303315}
-  - 135: {fileID: 1529303317}
+  - 65: {fileID: 1529303317}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
