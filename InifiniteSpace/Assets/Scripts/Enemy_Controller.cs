@@ -24,6 +24,11 @@ public class Enemy_Controller : MonoBehaviour
 		if (m_heatlh <= 0)
 			Destroy (gameObject);
 
+
+	}
+
+	void FixedUpdate()
+	{
 		/*if(target != null && target.tag == "Player") 
 		{
 			//m_rigidbody.velocity = Vector3(0f, 0f, 0f);
@@ -34,11 +39,6 @@ public class Enemy_Controller : MonoBehaviour
 			m_transform.Rotate(0f, m_turnRate, 0f);
 			m_rigidbody.velocity = m_transform.forward * m_speed;
 		}
-	}
-
-	void FixedUpdate()
-	{
-
 	}
 
 	void OnTriggerEnter(Collider other)
