@@ -71,7 +71,7 @@ public class Enemy_Controller : MonoBehaviour, IDamageable<int>
 			 TakeDamage(other.GetComponent<Projectile>().Damage);
 		}
 			
-		} 
+//	} 
 //		else if (other.tag == "Player") 
 //		{
 //			Destroy(gameObject);
