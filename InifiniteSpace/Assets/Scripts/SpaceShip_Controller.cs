@@ -2,9 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SpaceShip_Controller : MonoBehaviour {
+public class SpaceShip_Controller : MonoBehaviour, IDamageable<int> {
+
+	//interface methods
+	public void TakeDamage(int dam)
+	{
+		Health-=dam;
+	}
 
 
+
+	public int Health = 300;
     Rigidbody m_rigidbody;
     public GameObject playerModel;
     Transform m_Transform;
@@ -13,7 +21,8 @@ public class SpaceShip_Controller : MonoBehaviour {
 
 	public GameObject m_Target; 
 
-	HardPoint [] missiles; // holds the two spawn points for the missiles
+	Missile_HardPoint [] missiles; // holds the two spawn points for the missiles
+	Laser_Hardpoint [] lasers;	   // holds all the laser spawn points - array in case we want multiple lasers
 	public GameObject m_Missile;  // holds the prefab for missile
 	public GameObject getMissilePrefab()
 	{
@@ -21,26 +30,30 @@ public class SpaceShip_Controller : MonoBehaviour {
 	}
 
 	//All the Variables needed for firing projectiles. 
-	public GameObject projectile;
-	public Transform projSpawn;
-	public float fireRate;
-	float nextFire = 0.0f;
+	public GameObject Laser;
+	public GameObject getLaserPrefab()
+	{
+		return Laser;  //  Accessor for the laser prefab, in case we wanna have different kinds of lasers;
+	}
+
+
 
 	// Use this for initialization
 	void Start () 
     {
         m_rigidbody = GetComponent<Rigidbody>();
         m_Transform = GetComponent<Transform>();
-		missiles = GetComponentsInChildren<HardPoint>();
+		missiles = GetComponentsInChildren<Missile_HardPoint>();
+		lasers = GetComponentsInChildren<Laser_Hardpoint>();
 	}
 
 	int nextmissile = 0;
 	void Update()
 	{
-		if (Input.GetButton ("Fire1") && Time.time > nextFire) 
+		if (Input.GetButton ("Fire1") ) 
 		{
-			nextFire = Time.time + fireRate;
-			Instantiate(projectile, projSpawn.position, projSpawn.rotation);
+			lasers[0].Fire ();
+
 		}
 
 

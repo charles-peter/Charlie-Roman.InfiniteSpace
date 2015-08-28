@@ -7,7 +7,7 @@ public class Missile_Behavior : MonoBehaviour {
 	public float Speed = 100f;
 	public float TrackAngle = 5f;
 	public float SplashRadius = 5f;
-	public float Damage = 300f;
+	public int Damage = 300;
 	public float maxLifetime = 5f;
 	float currLife;
 	bool inFlight = false;
@@ -15,7 +15,7 @@ public class Missile_Behavior : MonoBehaviour {
 
 	Rigidbody m_RigidBody;
 	Transform m_Transform;
-
+	ParticleSystem exhaust;
 	public bool InFlight {
 		get {
 			return inFlight;
@@ -27,6 +27,7 @@ public class Missile_Behavior : MonoBehaviour {
 				m_RigidBody.isKinematic = false;
 				m_Transform.parent = null;
 				Destroy (gameObject, maxLifetime);
+				exhaust.Play();
 			}
 		}
 	}
@@ -51,7 +52,7 @@ public class Missile_Behavior : MonoBehaviour {
 		m_RigidBody = GetComponent<Rigidbody>();
 		m_RigidBody.isKinematic = true;
 		m_Transform = GetComponent<Transform>();
-
+		exhaust = GetComponentInChildren<ParticleSystem>();
 	}
 
 	void Update()

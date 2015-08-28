@@ -1,8 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy_Controller : MonoBehaviour 
+public class Enemy_Controller : MonoBehaviour, IDamageable<int> 
 {
+	//interface Methods
+	public void TakeDamage(int dam)
+	{
+		m_heatlh -=dam;
+	}
+
+
+
 	Rigidbody m_rigidbody;
 	Transform m_transform;
 
@@ -45,7 +53,7 @@ public class Enemy_Controller : MonoBehaviour
 	{
 		if(other.tag == "BaseProjectile") 
 		{
-			m_heatlh -= other.GetComponent<Projectile>().Damage;
+			 TakeDamage(other.GetComponent<Projectile>().Damage);
 		}
 	}
 	
