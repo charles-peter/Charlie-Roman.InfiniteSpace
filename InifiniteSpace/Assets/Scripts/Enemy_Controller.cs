@@ -35,8 +35,6 @@ public class Enemy_Controller : MonoBehaviour, IDamageable<int>
 	{
 		if (m_heatlh <= 0)
 			Destroy (gameObject);
-
-
 	}
 
 	void FixedUpdate()
@@ -49,7 +47,7 @@ public class Enemy_Controller : MonoBehaviour, IDamageable<int>
 				// The step size is equal to speed times frame time.
 				var step = m_turnRate * Time.deltaTime;
 				var newDir = Vector3.RotateTowards(m_transform.forward, m_ToTarget, step, 0.0f);
-				Debug.DrawRay(transform.position, newDir, Color.red);
+				//Debug.DrawRay(transform.position, newDir, Color.red);
 				// Move our position a step closer to the target.
 				m_transform.rotation = Quaternion.LookRotation(newDir);
 				
@@ -71,7 +69,6 @@ public class Enemy_Controller : MonoBehaviour, IDamageable<int>
 			 TakeDamage(other.GetComponent<Projectile>().Damage);
 		}
 			
-		} 
 //		else if (other.tag == "Player") 
 //		{
 //			Destroy(gameObject);
