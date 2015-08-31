@@ -149,52 +149,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 445092, guid: 5c42637e6c32ff74fb990c30dcd2512b, type: 2}
   m_PrefabInternal: {fileID: 1189572957}
---- !u!1001 &752987887
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 479828, guid: 4d380d050c3c530498a4d971ace88e68, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 32.6599998
-      objectReference: {fileID: 0}
-    - target: {fileID: 479828, guid: 4d380d050c3c530498a4d971ace88e68, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 479828, guid: 4d380d050c3c530498a4d971ace88e68, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 479828, guid: 4d380d050c3c530498a4d971ace88e68, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 479828, guid: 4d380d050c3c530498a4d971ace88e68, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 479828, guid: 4d380d050c3c530498a4d971ace88e68, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 479828, guid: 4d380d050c3c530498a4d971ace88e68, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 479828, guid: 4d380d050c3c530498a4d971ace88e68, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11455914, guid: 4d380d050c3c530498a4d971ace88e68, type: 2}
-      propertyPath: m_BaseBehavior
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4d380d050c3c530498a4d971ace88e68, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &818050922
 Prefab:
   m_ObjectHideFlags: 0
