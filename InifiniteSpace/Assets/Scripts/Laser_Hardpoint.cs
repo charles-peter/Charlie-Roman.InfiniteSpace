@@ -16,7 +16,6 @@ public class Laser_Hardpoint : _BaseHardPoint {
 	{
 		myController = FindObjectOfType<SpaceShip_Controller>();
 		MyTransform = GetComponent<Transform>();
-		
 		ProjectilePrefab = myController.getLaserPrefab();
 	}
 	
