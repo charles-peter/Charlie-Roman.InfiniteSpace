@@ -22,7 +22,6 @@ public class Enemy_Controller : MonoBehaviour, IDamageable<int>
 	public float m_speed;
 	public float m_turnRate;
 	public float m_fireRange;
-	public bool m_BaseBehavior;
 	public bool m_BaseBehavior = false;
 
 
@@ -60,7 +59,9 @@ public class Enemy_Controller : MonoBehaviour, IDamageable<int>
 			{
 				for(int i = 0; i < m_lasers.Length; ++i)
 					m_lasers[i].Fire();
+				Debug.Log("Enemy Firing");
 			}
+
 		}
 	}
 
