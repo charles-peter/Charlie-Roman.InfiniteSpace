@@ -15,7 +15,7 @@ public class Enemy_Controller : MonoBehaviour, IDamageable<int>
 	Rigidbody m_rigidbody;
 	Transform m_transform;
 
-	Enemy_Radar myRadar;
+	GameObject target;
 
 	//General Enemy Attributes
 	public int m_heatlh;
@@ -68,10 +68,9 @@ public class Enemy_Controller : MonoBehaviour, IDamageable<int>
 	{
 		if (m_BaseBehavior == true) 
 		{
-			//if (target != null && target.tag == "Player")
-			if(myRadar.GetTarget())
+			if (target != null && target.tag == "Player") 
 			{
-				m_ToTarget = myRadar.GetTarget().transform.position - m_transform.position;
+				m_ToTarget = target.GetComponent<SpaceShip_Controller>().transform.position - m_transform.position;
 				// The step size is equal to speed times frame time.
 				var step = m_turnRate * Time.deltaTime;
 				var newDir = Vector3.RotateTowards(m_transform.forward, m_ToTarget, step, 0.0f);
@@ -81,13 +80,12 @@ public class Enemy_Controller : MonoBehaviour, IDamageable<int>
 				
 				m_rigidbody.velocity = m_transform.forward * m_speed;
 			} 
-
-		}
-		else 
-		{
-			//If there is no target it does a base patrol;
-			m_transform.Rotate (0f, m_turnRate, 0f);
-			m_rigidbody.velocity = m_transform.forward * m_speed;
+			else 
+			{
+				//If there is no target it does a base patrol;
+				m_transform.Rotate (0f, m_turnRate, 0f);
+				m_rigidbody.velocity = m_transform.forward * m_speed;
+			}
 		}
 	}
 	
@@ -103,17 +101,13 @@ public class Enemy_Controller : MonoBehaviour, IDamageable<int>
 //			Destroy(gameObject);
 //		}
 	}
-
-	public void TargetAcquired(bool b)
-	{
-		m_BaseBehavior = b;
+	
+	public GameObject Target {
+		get {
+			return target;
+		}
+		set {
+			target = value;
+		}
 	}
-//	public GameObject Target {
-//		get {
-//			return target;
-//		}
-//		set {
-//			target = value;
-//		}
-//	}
 }

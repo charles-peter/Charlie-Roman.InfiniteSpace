@@ -24,11 +24,17 @@ public class SpaceShip_Controller : MonoBehaviour, IDamageable<int> {
 	Missile_HardPoint [] missiles; // holds the two spawn points for the missiles
 	Laser_Hardpoint [] lasers;	   // holds all the laser spawn points - array in case we want multiple lasers
 	public GameObject m_Missile;  // holds the prefab for missile
-	public GameObject getMissilePrefab(){return m_Missile;}// Accessor for the missile prefab, in case we wanna have different kinds of missiles;
+	public GameObject getMissilePrefab()
+	{
+		return m_Missile; // Accessor for the missile prefab, in case we wanna have different kinds of missiles;
+	}
 
+	//All the Variables needed for firing projectiles. 
 	public GameObject Laser;
-	public GameObject getLaserPrefab(){return Laser;}  //  Accessor for the laser prefab, in case we wanna have different kinds of lasers;
-
+	public GameObject getLaserPrefab()
+	{
+		return Laser;  //  Accessor for the laser prefab, in case we wanna have different kinds of lasers;
+	}
 
 
 
@@ -79,7 +85,10 @@ public class SpaceShip_Controller : MonoBehaviour, IDamageable<int> {
 				playerModel.transform.localRotation = Quaternion.Euler(0f,0f,fHorizontal * -Tilt);
 			else
 				playerModel.transform.localRotation = Quaternion.Euler(0f,0f,-fHorizontal * -Tilt);
-		       
+
+
+
+        
 
 
         
