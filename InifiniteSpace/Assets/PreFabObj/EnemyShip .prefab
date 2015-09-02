@@ -1,17 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &138002
+--- !u!1 &118988
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 492754}
-  - 114: {fileID: 11493512}
+  - 4: {fileID: 473216}
+  - 54: {fileID: 5459776}
+  - 135: {fileID: 13540068}
+  - 114: {fileID: 11401136}
   m_Layer: 0
-  m_Name: LaserSpawn
-  m_TagString: Untagged
+  m_Name: 'EnemyShip '
+  m_TagString: BaseEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,9 +58,9 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 472184}
-  - 33: {fileID: 3315496}
-  - 23: {fileID: 2316108}
+  - 4: {fileID: 425178}
+  - 33: {fileID: 3348818}
+  - 23: {fileID: 2322732}
   m_Layer: 0
   m_Name: dark_fighter_6
   m_TagString: Untagged
@@ -66,25 +68,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &189004
+--- !u!1 &168804
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 408142}
-  - 54: {fileID: 5479116}
-  - 135: {fileID: 13505818}
-  - 114: {fileID: 11420422}
-  m_Layer: 0
-  m_Name: EnemyShip
-  m_TagString: BaseEnemy
+  - 4: {fileID: 444556}
+  - 135: {fileID: 13505502}
+  - 114: {fileID: 11421716}
+  m_Layer: 8
+  m_Name: EnemyRadar
+  m_TagString: Radar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &408142
+--- !u!4 &425508
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -134,9 +135,9 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: .815893292, y: .815893233, z: .815893233}
   m_Children: []
-  m_Father: {fileID: 408142}
+  m_Father: {fileID: 473216}
   m_RootOrder: 0
---- !u!4 &492754
+--- !u!4 &476638
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -148,12 +149,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 408142}
   m_RootOrder: 2
---- !u!23 &2316108
+--- !u!4 &479828
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 66.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 473216}
+  m_RootOrder: 1
+--- !u!4 &473216
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 32.6599998, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children:
+  - {fileID: 425178}
+  - {fileID: 444556}
+  - {fileID: 476638}
+  - {fileID: 425508}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!23 &2322732
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170082}
+  m_GameObject: {fileID: 139670}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -172,19 +201,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3315496
+--- !u!33 &3348818
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170082}
+  m_GameObject: {fileID: 139670}
   m_Mesh: {fileID: 4300000, guid: b675ee0a7d02e5b449025be89a03de32, type: 3}
---- !u!54 &5479116
+--- !u!54 &5459776
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189004}
+  m_GameObject: {fileID: 118988}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -194,7 +223,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11406116
+--- !u!114 &11416558
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -242,38 +271,38 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138002}
+  m_GameObject: {fileID: 168804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dc1176e276106d4c845e96de1814232, type: 3}
+  m_Script: {fileID: 11500000, guid: 337f0c15fb9eaa74c808ba7e7a80d657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectilePrefab: {fileID: 0}
-  fireRate: .400000006
---- !u!135 &13505818
+  DetectionRange: 10
+  TagToDetect: Player
+--- !u!135 &13505502
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189004}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .899368048
-  m_Center: {x: 5.96046448e-08, y: 0, z: 2.1886077e-08}
---- !u!135 &13542120
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151514}
+  m_GameObject: {fileID: 168804}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &13540068
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .899368048
+  m_Center: {x: 5.96046448e-08, y: 0, z: 2.1886077e-08}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -282,12 +311,28 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: Laser
-      value: 
-      objectReference: {fileID: 144666, guid: 1da7c8cb66250c74eba72b5317839128, type: 2}
+      propertyPath: m_Name
+      value: EnemyRadar
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_LocalPosition.z
+      propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DetectionRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_bBaseBehavior
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_BaseBehavior
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_fireRange
@@ -295,5 +340,5 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 189004}
+  m_RootGameObject: {fileID: 118988}
   m_IsPrefabParent: 1
