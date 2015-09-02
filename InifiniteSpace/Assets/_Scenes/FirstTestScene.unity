@@ -87,10 +87,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &58297927 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 166620, guid: 44ec8b8f187089545886460f84dab78e, type: 2}
-  m_PrefabInternal: {fileID: 411909541}
 --- !u!1001 &411909541
 Prefab:
   m_ObjectHideFlags: 0
@@ -632,7 +628,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1863910350 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: f8be63edd520032488cf5b981351615d, type: 3}
@@ -702,7 +698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0a7526954c86f45b70d6668afe9d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_type: {fileID: 192144, guid: 44ec8b8f187089545886460f84dab78e, type: 2}
+  enemy_type: {fileID: 166620, guid: 44ec8b8f187089545886460f84dab78e, type: 2}
   spawn_count: 1
   spawn_rate: 1.5
 --- !u!4 &1967511757
@@ -716,7 +712,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!54 &1967511758
 Rigidbody:
   m_ObjectHideFlags: 0
